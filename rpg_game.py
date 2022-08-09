@@ -3,6 +3,8 @@
 import random
 import crayons
 import requests
+from emoji import emojize
+# pip install emoji
 
 # Replace RPG starter project with this code when new instructions are live
 
@@ -128,7 +130,8 @@ while True:
       print("Go back in the house.")
   elif 'potion' in inventory:
       print('I see some magic in you.')
-      print('Answer this question to reveal the key.')
+      print('Answer this question to reveal the ',end="")
+      print(emojize(":key:"))
       print(question['results'][0]['question'])
       answer = input(crayons.red("Enter True or False\n"))
 
@@ -142,10 +145,14 @@ while True:
     #if flamethrower is in the inventory player can kill the monster
     #monster is removed from items
       if 'flamethrower' in inventory:
+          print(emojize(":alien_monster:"))
           print(crayons.yellow('Oh oh there is a monster here\n'))
-          print('Using the flamethrower to kill the monster')
-          print('Hasta la vista ...')
+          print('Using the flamethrower to kill the monster ', end="")
+          print(emojize(":fire:"))
+          print('Hasta la vista BABY ', end="")
+          print(emojize(":smiling_face_with_sunglasses:"))
           del rooms[currentRoom]['item']
       else:
+         print(emojize(":alien_monster:"))
          print('A monster has got you... GAME OVER!')
          break
