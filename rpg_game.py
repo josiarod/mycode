@@ -69,12 +69,12 @@ rooms = {
 
 
 room_names = ['Pantry','Garden','Dining Room', 'Hall', 'Laundry room']
-#start the player in the Hall
+#start the player in a random room != to kitchen
 currentRoom = room_names[random.randint(0, len(room_names) - 1)]
 
 showInstructions()
 
-
+#use api to ask question when the user is in the garden missing the key
 question = requests.get('https://opentdb.com/api.php?amount=1&type=boolean')
 question = question.json()
 
