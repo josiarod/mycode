@@ -6,7 +6,7 @@ import getpass
 
 def main():
     t = paramiko.Transport("10.10.2.3", 22)
-
+    print(type(paramiko.Transport("10.10.2.3", 22)))
     t.connect(username="bender", password=getpass.getpass())
 
     sftp = paramiko.SFTPClient.from_transport(t)
